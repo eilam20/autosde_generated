@@ -41,6 +41,26 @@ describe 'JobApi' do
     end
   end
 
+  # unit tests for jobs_pk_delete
+  # @param pk 
+  # @param [Hash] opts the optional parameters
+  # @return [Array<Job>]
+  describe 'jobs_pk_delete test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for jobs_pk_get
+  # @param pk 
+  # @param [Hash] opts the optional parameters
+  # @return [Array<Job>]
+  describe 'jobs_pk_get test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for jobs_post
   # @param job_create 
   # @param [Hash] opts the optional parameters

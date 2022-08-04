@@ -14,43 +14,51 @@ require 'date'
 require 'time'
 
 module EilamTest
-  # Job
-  class Job
-    # date_finished
-    attr_accessor :date_finished
+  # TODO add description
+  class EventResponse
+    # created_at
+    attr_accessor :created_at
 
-    # date_started
-    attr_accessor :date_started
+    # description
+    attr_accessor :description
 
-    # extra
-    attr_accessor :extra
+    # error_code
+    attr_accessor :error_code
 
-    # status
-    attr_accessor :status
+    # event_id
+    attr_accessor :event_id
 
-    # task_args
-    attr_accessor :task_args
+    # event_type
+    attr_accessor :event_type
 
-    # task_id
-    attr_accessor :task_id
+    # fixed
+    attr_accessor :fixed
 
-    # task_kwargs
-    attr_accessor :task_kwargs
+    # last_timestamp
+    attr_accessor :last_timestamp
 
-    # task_name
-    attr_accessor :task_name
+    # refresh_interval
+    attr_accessor :refresh_interval
+
+    # !!uuid of storage_system
+    attr_accessor :storage_system
+
+    # uuid
+    attr_accessor :uuid
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'date_finished' => :'date_finished',
-        :'date_started' => :'date_started',
-        :'extra' => :'extra',
-        :'status' => :'status',
-        :'task_args' => :'task_args',
-        :'task_id' => :'task_id',
-        :'task_kwargs' => :'task_kwargs',
-        :'task_name' => :'task_name'
+        :'created_at' => :'created_at',
+        :'description' => :'description',
+        :'error_code' => :'error_code',
+        :'event_id' => :'event_id',
+        :'event_type' => :'event_type',
+        :'fixed' => :'fixed',
+        :'last_timestamp' => :'last_timestamp',
+        :'refresh_interval' => :'refresh_interval',
+        :'storage_system' => :'storage_system',
+        :'uuid' => :'uuid'
       }
     end
 
@@ -62,14 +70,16 @@ module EilamTest
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'date_finished' => :'Time',
-        :'date_started' => :'Time',
-        :'extra' => :'String',
-        :'status' => :'String',
-        :'task_args' => :'String',
-        :'task_id' => :'String',
-        :'task_kwargs' => :'String',
-        :'task_name' => :'String'
+        :'created_at' => :'Time',
+        :'description' => :'String',
+        :'error_code' => :'String',
+        :'event_id' => :'Integer',
+        :'event_type' => :'String',
+        :'fixed' => :'String',
+        :'last_timestamp' => :'Time',
+        :'refresh_interval' => :'Integer',
+        :'storage_system' => :'String',
+        :'uuid' => :'String'
       }
     end
 
@@ -83,47 +93,55 @@ module EilamTest
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `EilamTest::Job` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `EilamTest::EventResponse` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `EilamTest::Job`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `EilamTest::EventResponse`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'date_finished')
-        self.date_finished = attributes[:'date_finished']
+      if attributes.key?(:'created_at')
+        self.created_at = attributes[:'created_at']
       end
 
-      if attributes.key?(:'date_started')
-        self.date_started = attributes[:'date_started']
+      if attributes.key?(:'description')
+        self.description = attributes[:'description']
       end
 
-      if attributes.key?(:'extra')
-        self.extra = attributes[:'extra']
+      if attributes.key?(:'error_code')
+        self.error_code = attributes[:'error_code']
       end
 
-      if attributes.key?(:'status')
-        self.status = attributes[:'status']
+      if attributes.key?(:'event_id')
+        self.event_id = attributes[:'event_id']
       end
 
-      if attributes.key?(:'task_args')
-        self.task_args = attributes[:'task_args']
+      if attributes.key?(:'event_type')
+        self.event_type = attributes[:'event_type']
       end
 
-      if attributes.key?(:'task_id')
-        self.task_id = attributes[:'task_id']
+      if attributes.key?(:'fixed')
+        self.fixed = attributes[:'fixed']
       end
 
-      if attributes.key?(:'task_kwargs')
-        self.task_kwargs = attributes[:'task_kwargs']
+      if attributes.key?(:'last_timestamp')
+        self.last_timestamp = attributes[:'last_timestamp']
       end
 
-      if attributes.key?(:'task_name')
-        self.task_name = attributes[:'task_name']
+      if attributes.key?(:'refresh_interval')
+        self.refresh_interval = attributes[:'refresh_interval']
+      end
+
+      if attributes.key?(:'storage_system')
+        self.storage_system = attributes[:'storage_system']
+      end
+
+      if attributes.key?(:'uuid')
+        self.uuid = attributes[:'uuid']
       end
     end
 
@@ -145,14 +163,16 @@ module EilamTest
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          date_finished == o.date_finished &&
-          date_started == o.date_started &&
-          extra == o.extra &&
-          status == o.status &&
-          task_args == o.task_args &&
-          task_id == o.task_id &&
-          task_kwargs == o.task_kwargs &&
-          task_name == o.task_name
+          created_at == o.created_at &&
+          description == o.description &&
+          error_code == o.error_code &&
+          event_id == o.event_id &&
+          event_type == o.event_type &&
+          fixed == o.fixed &&
+          last_timestamp == o.last_timestamp &&
+          refresh_interval == o.refresh_interval &&
+          storage_system == o.storage_system &&
+          uuid == o.uuid
     end
 
     # @see the `==` method
@@ -164,7 +184,7 @@ module EilamTest
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [date_finished, date_started, extra, status, task_args, task_id, task_kwargs, task_name].hash
+      [created_at, description, error_code, event_id, event_type, fixed, last_timestamp, refresh_interval, storage_system, uuid].hash
     end
 
     # Builds the object from hash

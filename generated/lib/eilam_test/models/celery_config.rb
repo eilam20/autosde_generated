@@ -14,43 +14,19 @@ require 'date'
 require 'time'
 
 module EilamTest
-  # Job
-  class Job
-    # date_finished
-    attr_accessor :date_finished
+  # CeleryBeatConfig object represents celery-beat (refresh params
+  class CeleryConfig
+    # celery_beat_enabled
+    attr_accessor :celery_beat_enabled
 
-    # date_started
-    attr_accessor :date_started
-
-    # extra
-    attr_accessor :extra
-
-    # status
-    attr_accessor :status
-
-    # task_args
-    attr_accessor :task_args
-
-    # task_id
-    attr_accessor :task_id
-
-    # task_kwargs
-    attr_accessor :task_kwargs
-
-    # task_name
-    attr_accessor :task_name
+    # interval_sec
+    attr_accessor :interval_sec
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'date_finished' => :'date_finished',
-        :'date_started' => :'date_started',
-        :'extra' => :'extra',
-        :'status' => :'status',
-        :'task_args' => :'task_args',
-        :'task_id' => :'task_id',
-        :'task_kwargs' => :'task_kwargs',
-        :'task_name' => :'task_name'
+        :'celery_beat_enabled' => :'celery_beat_enabled',
+        :'interval_sec' => :'interval_sec'
       }
     end
 
@@ -62,14 +38,8 @@ module EilamTest
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'date_finished' => :'Time',
-        :'date_started' => :'Time',
-        :'extra' => :'String',
-        :'status' => :'String',
-        :'task_args' => :'String',
-        :'task_id' => :'String',
-        :'task_kwargs' => :'String',
-        :'task_name' => :'String'
+        :'celery_beat_enabled' => :'Boolean',
+        :'interval_sec' => :'Integer'
       }
     end
 
@@ -83,47 +53,23 @@ module EilamTest
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `EilamTest::Job` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `EilamTest::CeleryConfig` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `EilamTest::Job`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `EilamTest::CeleryConfig`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'date_finished')
-        self.date_finished = attributes[:'date_finished']
+      if attributes.key?(:'celery_beat_enabled')
+        self.celery_beat_enabled = attributes[:'celery_beat_enabled']
       end
 
-      if attributes.key?(:'date_started')
-        self.date_started = attributes[:'date_started']
-      end
-
-      if attributes.key?(:'extra')
-        self.extra = attributes[:'extra']
-      end
-
-      if attributes.key?(:'status')
-        self.status = attributes[:'status']
-      end
-
-      if attributes.key?(:'task_args')
-        self.task_args = attributes[:'task_args']
-      end
-
-      if attributes.key?(:'task_id')
-        self.task_id = attributes[:'task_id']
-      end
-
-      if attributes.key?(:'task_kwargs')
-        self.task_kwargs = attributes[:'task_kwargs']
-      end
-
-      if attributes.key?(:'task_name')
-        self.task_name = attributes[:'task_name']
+      if attributes.key?(:'interval_sec')
+        self.interval_sec = attributes[:'interval_sec']
       end
     end
 
@@ -145,14 +91,8 @@ module EilamTest
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          date_finished == o.date_finished &&
-          date_started == o.date_started &&
-          extra == o.extra &&
-          status == o.status &&
-          task_args == o.task_args &&
-          task_id == o.task_id &&
-          task_kwargs == o.task_kwargs &&
-          task_name == o.task_name
+          celery_beat_enabled == o.celery_beat_enabled &&
+          interval_sec == o.interval_sec
     end
 
     # @see the `==` method
@@ -164,7 +104,7 @@ module EilamTest
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [date_finished, date_started, extra, status, task_args, task_id, task_kwargs, task_name].hash
+      [celery_beat_enabled, interval_sec].hash
     end
 
     # Builds the object from hash

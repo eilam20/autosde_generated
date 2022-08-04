@@ -25,8 +25,11 @@ docs/AutoSDERoleApi.md
 docs/CapabilityTranslation.md
 docs/CapabilityTranslationApi.md
 docs/CapabilityTranslationCreate.md
+docs/CeleryConfig.md
+docs/CeleryConfigApi.md
 docs/Event.md
 docs/EventApi.md
+docs/EventResponse.md
 docs/Host.md
 docs/HostApi.md
 docs/HostCluster.md
@@ -52,6 +55,8 @@ docs/Profile.md
 docs/ProfileApi.md
 docs/ProvisioningStrategy.md
 docs/ProvisioningStrategyApi.md
+docs/RefreshSystem.md
+docs/RefreshSystemApi.md
 docs/Service.md
 docs/ServiceAbstractCapabilityValue.md
 docs/ServiceApi.md
@@ -107,6 +112,7 @@ lib/eilam_test/api/authentication_api.rb
 lib/eilam_test/api/auto_sde_project_api.rb
 lib/eilam_test/api/auto_sde_role_api.rb
 lib/eilam_test/api/capability_translation_api.rb
+lib/eilam_test/api/celery_config_api.rb
 lib/eilam_test/api/event_api.rb
 lib/eilam_test/api/host_api.rb
 lib/eilam_test/api/host_cluster_api.rb
@@ -117,6 +123,7 @@ lib/eilam_test/api/job_api.rb
 lib/eilam_test/api/native_capability_api.rb
 lib/eilam_test/api/profile_api.rb
 lib/eilam_test/api/provisioning_strategy_api.rb
+lib/eilam_test/api/refresh_system_api.rb
 lib/eilam_test/api/service_api.rb
 lib/eilam_test/api/service_resource_attachment_api.rb
 lib/eilam_test/api/snapshot_api.rb
@@ -146,7 +153,9 @@ lib/eilam_test/models/auto_sde_project.rb
 lib/eilam_test/models/auto_sde_role.rb
 lib/eilam_test/models/capability_translation.rb
 lib/eilam_test/models/capability_translation_create.rb
+lib/eilam_test/models/celery_config.rb
 lib/eilam_test/models/event.rb
+lib/eilam_test/models/event_response.rb
 lib/eilam_test/models/host.rb
 lib/eilam_test/models/host_cluster.rb
 lib/eilam_test/models/host_cluster_create.rb
@@ -163,6 +172,7 @@ lib/eilam_test/models/job_create.rb
 lib/eilam_test/models/native_capability.rb
 lib/eilam_test/models/profile.rb
 lib/eilam_test/models/provisioning_strategy.rb
+lib/eilam_test/models/refresh_system.rb
 lib/eilam_test/models/service.rb
 lib/eilam_test/models/service_abstract_capability_value.rb
 lib/eilam_test/models/service_create.rb
@@ -203,6 +213,7 @@ spec/api/authentication_api_spec.rb
 spec/api/auto_sde_project_api_spec.rb
 spec/api/auto_sde_role_api_spec.rb
 spec/api/capability_translation_api_spec.rb
+spec/api/celery_config_api_spec.rb
 spec/api/event_api_spec.rb
 spec/api/host_api_spec.rb
 spec/api/host_cluster_api_spec.rb
@@ -213,6 +224,7 @@ spec/api/job_api_spec.rb
 spec/api/native_capability_api_spec.rb
 spec/api/profile_api_spec.rb
 spec/api/provisioning_strategy_api_spec.rb
+spec/api/refresh_system_api_spec.rb
 spec/api/service_api_spec.rb
 spec/api/service_resource_attachment_api_spec.rb
 spec/api/snapshot_api_spec.rb
@@ -240,6 +252,8 @@ spec/models/auto_sde_project_spec.rb
 spec/models/auto_sde_role_spec.rb
 spec/models/capability_translation_create_spec.rb
 spec/models/capability_translation_spec.rb
+spec/models/celery_config_spec.rb
+spec/models/event_response_spec.rb
 spec/models/event_spec.rb
 spec/models/host_cluster_create_spec.rb
 spec/models/host_cluster_membership_spec.rb
@@ -257,6 +271,7 @@ spec/models/job_spec.rb
 spec/models/native_capability_spec.rb
 spec/models/profile_spec.rb
 spec/models/provisioning_strategy_spec.rb
+spec/models/refresh_system_spec.rb
 spec/models/service_abstract_capability_value_spec.rb
 spec/models/service_create_spec.rb
 spec/models/service_resource_attachment_spec.rb

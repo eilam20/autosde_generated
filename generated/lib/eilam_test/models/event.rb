@@ -14,8 +14,11 @@ require 'date'
 require 'time'
 
 module EilamTest
-  # Event object represents storage system alerts and messages.
+  # Event
   class Event
+    # created_at
+    attr_accessor :created_at
+
     # description
     attr_accessor :description
 
@@ -34,6 +37,9 @@ module EilamTest
     # last_timestamp
     attr_accessor :last_timestamp
 
+    # refresh_interval
+    attr_accessor :refresh_interval
+
     attr_accessor :storage_system
 
     # uuid
@@ -42,12 +48,14 @@ module EilamTest
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'created_at' => :'created_at',
         :'description' => :'description',
         :'error_code' => :'error_code',
         :'event_id' => :'event_id',
         :'event_type' => :'event_type',
         :'fixed' => :'fixed',
         :'last_timestamp' => :'last_timestamp',
+        :'refresh_interval' => :'refresh_interval',
         :'storage_system' => :'storage_system',
         :'uuid' => :'uuid'
       }
@@ -61,12 +69,14 @@ module EilamTest
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'created_at' => :'Time',
         :'description' => :'String',
         :'error_code' => :'String',
         :'event_id' => :'Integer',
         :'event_type' => :'String',
         :'fixed' => :'String',
         :'last_timestamp' => :'Time',
+        :'refresh_interval' => :'Integer',
         :'storage_system' => :'StorageSystem',
         :'uuid' => :'String'
       }
@@ -93,6 +103,10 @@ module EilamTest
         h[k.to_sym] = v
       }
 
+      if attributes.key?(:'created_at')
+        self.created_at = attributes[:'created_at']
+      end
+
       if attributes.key?(:'description')
         self.description = attributes[:'description']
       end
@@ -115,6 +129,10 @@ module EilamTest
 
       if attributes.key?(:'last_timestamp')
         self.last_timestamp = attributes[:'last_timestamp']
+      end
+
+      if attributes.key?(:'refresh_interval')
+        self.refresh_interval = attributes[:'refresh_interval']
       end
 
       if attributes.key?(:'storage_system')
@@ -144,12 +162,14 @@ module EilamTest
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          created_at == o.created_at &&
           description == o.description &&
           error_code == o.error_code &&
           event_id == o.event_id &&
           event_type == o.event_type &&
           fixed == o.fixed &&
           last_timestamp == o.last_timestamp &&
+          refresh_interval == o.refresh_interval &&
           storage_system == o.storage_system &&
           uuid == o.uuid
     end
@@ -163,7 +183,7 @@ module EilamTest
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [description, error_code, event_id, event_type, fixed, last_timestamp, storage_system, uuid].hash
+      [created_at, description, error_code, event_id, event_type, fixed, last_timestamp, refresh_interval, storage_system, uuid].hash
     end
 
     # Builds the object from hash

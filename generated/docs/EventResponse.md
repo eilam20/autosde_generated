@@ -1,4 +1,4 @@
-# EilamTest::Event
+# EilamTest::EventResponse
 
 ## Properties
 
@@ -12,7 +12,7 @@
 | **fixed** | **String** | fixed | [optional] |
 | **last_timestamp** | **Time** | last_timestamp | [optional] |
 | **refresh_interval** | **Integer** | refresh_interval | [optional] |
-| **storage_system** | [**StorageSystem**](StorageSystem.md) |  | [optional] |
+| **storage_system** | **String** | !!uuid of storage_system | [optional] |
 | **uuid** | **String** | uuid | [optional] |
 
 ## Example
@@ -20,7 +20,7 @@
 ```ruby
 require 'eilam_test'
 
-instance = EilamTest::Event.new(
+instance = EilamTest::EventResponse.new(
   created_at: null,
   description: null,
   error_code: null,

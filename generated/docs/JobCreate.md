@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **task_args** | **String** | task_args | [optional] |
+| **task_kwargs** | **String** | task_kwargs | [optional] |
 | **task_name** | **String** | task_name | [optional] |
 
 ## Example
@@ -13,7 +13,7 @@
 require 'eilam_test'
 
 instance = EilamTest::JobCreate.new(
-  task_args: null,
+  task_kwargs: null,
   task_name: null
 )
 ```

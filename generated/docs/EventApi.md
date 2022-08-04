@@ -12,7 +12,7 @@ All URIs are relative to *http://localhost:9000/site-manager/api/v1/engine*
 
 ## events_get
 
-> <Array<Event>> events_get
+> <Array<EventResponse>> events_get
 
 
 
@@ -42,7 +42,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Array<Event>>, Integer, Hash)> events_get_with_http_info
+> <Array(<Array<EventResponse>>, Integer, Hash)> events_get_with_http_info
 
 ```ruby
 begin
@@ -50,7 +50,7 @@ begin
   data, status_code, headers = api_instance.events_get_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <Array<Event>>
+  p data # => <Array<EventResponse>>
 rescue EilamTest::ApiError => e
   puts "Error when calling EventApi->events_get_with_http_info: #{e}"
 end
@@ -62,7 +62,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**Array&lt;Event&gt;**](Event.md)
+[**Array&lt;EventResponse&gt;**](EventResponse.md)
 
 ### Authorization
 
@@ -76,7 +76,7 @@ This endpoint does not need any parameter.
 
 ## events_pk_delete
 
-> <Array<Event>> events_pk_delete(pk)
+> <Array<EventResponse>> events_pk_delete(pk)
 
 
 
@@ -107,7 +107,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Array<Event>>, Integer, Hash)> events_pk_delete_with_http_info(pk)
+> <Array(<Array<EventResponse>>, Integer, Hash)> events_pk_delete_with_http_info(pk)
 
 ```ruby
 begin
@@ -115,7 +115,7 @@ begin
   data, status_code, headers = api_instance.events_pk_delete_with_http_info(pk)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <Array<Event>>
+  p data # => <Array<EventResponse>>
 rescue EilamTest::ApiError => e
   puts "Error when calling EventApi->events_pk_delete_with_http_info: #{e}"
 end
@@ -129,7 +129,7 @@ end
 
 ### Return type
 
-[**Array&lt;Event&gt;**](Event.md)
+[**Array&lt;EventResponse&gt;**](EventResponse.md)
 
 ### Authorization
 
@@ -143,7 +143,7 @@ end
 
 ## events_pk_get
 
-> <Array<Event>> events_pk_get(pk)
+> <Array<EventResponse>> events_pk_get(pk)
 
 
 
@@ -174,7 +174,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Array<Event>>, Integer, Hash)> events_pk_get_with_http_info(pk)
+> <Array(<Array<EventResponse>>, Integer, Hash)> events_pk_get_with_http_info(pk)
 
 ```ruby
 begin
@@ -182,7 +182,7 @@ begin
   data, status_code, headers = api_instance.events_pk_get_with_http_info(pk)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <Array<Event>>
+  p data # => <Array<EventResponse>>
 rescue EilamTest::ApiError => e
   puts "Error when calling EventApi->events_pk_get_with_http_info: #{e}"
 end
@@ -196,7 +196,7 @@ end
 
 ### Return type
 
-[**Array&lt;Event&gt;**](Event.md)
+[**Array&lt;EventResponse&gt;**](EventResponse.md)
 
 ### Authorization
 
@@ -210,7 +210,7 @@ end
 
 ## events_post
 
-> <Event> events_post(event)
+> <EventResponse> events_post(event)
 
 
 
@@ -241,7 +241,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Event>, Integer, Hash)> events_post_with_http_info(event)
+> <Array(<EventResponse>, Integer, Hash)> events_post_with_http_info(event)
 
 ```ruby
 begin
@@ -249,7 +249,7 @@ begin
   data, status_code, headers = api_instance.events_post_with_http_info(event)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <Event>
+  p data # => <EventResponse>
 rescue EilamTest::ApiError => e
   puts "Error when calling EventApi->events_post_with_http_info: #{e}"
 end
@@ -263,7 +263,7 @@ end
 
 ### Return type
 
-[**Event**](Event.md)
+[**EventResponse**](EventResponse.md)
 
 ### Authorization
 

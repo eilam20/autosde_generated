@@ -16,8 +16,8 @@ require 'time'
 module EilamTest
   # JobCreate
   class JobCreate
-    # task_args
-    attr_accessor :task_args
+    # task_kwargs
+    attr_accessor :task_kwargs
 
     # task_name
     attr_accessor :task_name
@@ -25,7 +25,7 @@ module EilamTest
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'task_args' => :'task_args',
+        :'task_kwargs' => :'task_kwargs',
         :'task_name' => :'task_name'
       }
     end
@@ -38,7 +38,7 @@ module EilamTest
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'task_args' => :'String',
+        :'task_kwargs' => :'String',
         :'task_name' => :'String'
       }
     end
@@ -64,8 +64,8 @@ module EilamTest
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'task_args')
-        self.task_args = attributes[:'task_args']
+      if attributes.key?(:'task_kwargs')
+        self.task_kwargs = attributes[:'task_kwargs']
       end
 
       if attributes.key?(:'task_name')
@@ -91,7 +91,7 @@ module EilamTest
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          task_args == o.task_args &&
+          task_kwargs == o.task_kwargs &&
           task_name == o.task_name
     end
 
@@ -104,7 +104,7 @@ module EilamTest
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [task_args, task_name].hash
+      [task_kwargs, task_name].hash
     end
 
     # Builds the object from hash

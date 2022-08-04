@@ -72,6 +72,124 @@ module EilamTest
       return data, status_code, headers
     end
 
+    # @param pk [Integer] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<Job>]
+    def jobs_pk_delete(pk, opts = {})
+      data, _status_code, _headers = jobs_pk_delete_with_http_info(pk, opts)
+      data
+    end
+
+    # @param pk [Integer] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(Array<Job>, Integer, Hash)>] Array<Job> data, response status code and response headers
+    def jobs_pk_delete_with_http_info(pk, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: JobApi.jobs_pk_delete ...'
+      end
+      # verify the required parameter 'pk' is set
+      if @api_client.config.client_side_validation && pk.nil?
+        fail ArgumentError, "Missing the required parameter 'pk' when calling JobApi.jobs_pk_delete"
+      end
+      # resource path
+      local_var_path = '/jobs/{pk}'.sub('{' + 'pk' + '}', CGI.escape(pk.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'Array<Job>'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['bearerAuth']
+
+      new_options = opts.merge(
+        :operation => :"JobApi.jobs_pk_delete",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: JobApi#jobs_pk_delete\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # @param pk [Integer] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<Job>]
+    def jobs_pk_get(pk, opts = {})
+      data, _status_code, _headers = jobs_pk_get_with_http_info(pk, opts)
+      data
+    end
+
+    # @param pk [Integer] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(Array<Job>, Integer, Hash)>] Array<Job> data, response status code and response headers
+    def jobs_pk_get_with_http_info(pk, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: JobApi.jobs_pk_get ...'
+      end
+      # verify the required parameter 'pk' is set
+      if @api_client.config.client_side_validation && pk.nil?
+        fail ArgumentError, "Missing the required parameter 'pk' when calling JobApi.jobs_pk_get"
+      end
+      # resource path
+      local_var_path = '/jobs/{pk}'.sub('{' + 'pk' + '}', CGI.escape(pk.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'Array<Job>'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['bearerAuth']
+
+      new_options = opts.merge(
+        :operation => :"JobApi.jobs_pk_get",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: JobApi#jobs_pk_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # @param job_create [JobCreate] 
     # @param [Hash] opts the optional parameters
     # @return [Job]

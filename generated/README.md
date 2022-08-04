@@ -105,6 +105,8 @@ Class | Method | HTTP request | Description
 *EilamTest::CapabilityTranslationApi* | [**capability_translations_pk_delete**](docs/CapabilityTranslationApi.md#capability_translations_pk_delete) | **DELETE** /capability-translations/{pk} | 
 *EilamTest::CapabilityTranslationApi* | [**capability_translations_pk_get**](docs/CapabilityTranslationApi.md#capability_translations_pk_get) | **GET** /capability-translations/{pk} | 
 *EilamTest::CapabilityTranslationApi* | [**capability_translations_post**](docs/CapabilityTranslationApi.md#capability_translations_post) | **POST** /capability-translations | 
+*EilamTest::CeleryConfigApi* | [**celery_config_get**](docs/CeleryConfigApi.md#celery_config_get) | **GET** /celery-config | 
+*EilamTest::CeleryConfigApi* | [**celery_config_post**](docs/CeleryConfigApi.md#celery_config_post) | **POST** /celery-config | 
 *EilamTest::EventApi* | [**events_get**](docs/EventApi.md#events_get) | **GET** /events | 
 *EilamTest::EventApi* | [**events_pk_delete**](docs/EventApi.md#events_pk_delete) | **DELETE** /events/{pk} | 
 *EilamTest::EventApi* | [**events_pk_get**](docs/EventApi.md#events_pk_get) | **GET** /events/{pk} | 
@@ -130,6 +132,8 @@ Class | Method | HTTP request | Description
 *EilamTest::HostVolumeConnectionApi* | [**host_volume_connection_pk_get**](docs/HostVolumeConnectionApi.md#host_volume_connection_pk_get) | **GET** /host-volume-connection/{pk} | 
 *EilamTest::HostVolumeConnectionApi* | [**host_volume_connection_post**](docs/HostVolumeConnectionApi.md#host_volume_connection_post) | **POST** /host-volume-connection | 
 *EilamTest::JobApi* | [**jobs_get**](docs/JobApi.md#jobs_get) | **GET** /jobs | 
+*EilamTest::JobApi* | [**jobs_pk_delete**](docs/JobApi.md#jobs_pk_delete) | **DELETE** /jobs/{pk} | 
+*EilamTest::JobApi* | [**jobs_pk_get**](docs/JobApi.md#jobs_pk_get) | **GET** /jobs/{pk} | 
 *EilamTest::JobApi* | [**jobs_post**](docs/JobApi.md#jobs_post) | **POST** /jobs | 
 *EilamTest::NativeCapabilityApi* | [**native_capabilities_get**](docs/NativeCapabilityApi.md#native_capabilities_get) | **GET** /native-capabilities | 
 *EilamTest::NativeCapabilityApi* | [**native_capabilities_pk_delete**](docs/NativeCapabilityApi.md#native_capabilities_pk_delete) | **DELETE** /native-capabilities/{pk} | 
@@ -143,6 +147,7 @@ Class | Method | HTTP request | Description
 *EilamTest::ProvisioningStrategyApi* | [**provisioning_strategy_pk_delete**](docs/ProvisioningStrategyApi.md#provisioning_strategy_pk_delete) | **DELETE** /provisioning-strategy/{pk} | 
 *EilamTest::ProvisioningStrategyApi* | [**provisioning_strategy_pk_get**](docs/ProvisioningStrategyApi.md#provisioning_strategy_pk_get) | **GET** /provisioning-strategy/{pk} | 
 *EilamTest::ProvisioningStrategyApi* | [**provisioning_strategy_post**](docs/ProvisioningStrategyApi.md#provisioning_strategy_post) | **POST** /provisioning-strategy | 
+*EilamTest::RefreshSystemApi* | [**refresh_system_post**](docs/RefreshSystemApi.md#refresh_system_post) | **POST** /refresh-system | 
 *EilamTest::ServiceApi* | [**services_get**](docs/ServiceApi.md#services_get) | **GET** /services | 
 *EilamTest::ServiceApi* | [**services_pk_delete**](docs/ServiceApi.md#services_pk_delete) | **DELETE** /services/{pk} | 
 *EilamTest::ServiceApi* | [**services_pk_get**](docs/ServiceApi.md#services_pk_get) | **GET** /services/{pk} | 
@@ -211,7 +216,9 @@ Class | Method | HTTP request | Description
  - [EilamTest::AutoSDERole](docs/AutoSDERole.md)
  - [EilamTest::CapabilityTranslation](docs/CapabilityTranslation.md)
  - [EilamTest::CapabilityTranslationCreate](docs/CapabilityTranslationCreate.md)
+ - [EilamTest::CeleryConfig](docs/CeleryConfig.md)
  - [EilamTest::Event](docs/Event.md)
+ - [EilamTest::EventResponse](docs/EventResponse.md)
  - [EilamTest::Host](docs/Host.md)
  - [EilamTest::HostCluster](docs/HostCluster.md)
  - [EilamTest::HostClusterCreate](docs/HostClusterCreate.md)
@@ -228,6 +235,7 @@ Class | Method | HTTP request | Description
  - [EilamTest::NativeCapability](docs/NativeCapability.md)
  - [EilamTest::Profile](docs/Profile.md)
  - [EilamTest::ProvisioningStrategy](docs/ProvisioningStrategy.md)
+ - [EilamTest::RefreshSystem](docs/RefreshSystem.md)
  - [EilamTest::Service](docs/Service.md)
  - [EilamTest::ServiceAbstractCapabilityValue](docs/ServiceAbstractCapabilityValue.md)
  - [EilamTest::ServiceCreate](docs/ServiceCreate.md)
